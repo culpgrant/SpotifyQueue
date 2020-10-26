@@ -6,7 +6,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '79f9626d80782cf145dd05db66bf2f83'
+app.config['SECRET_KEY'] = ''
 
 @app.route('/', methods = ["GET","POST"])
 @app.route('/home')
@@ -30,8 +30,8 @@ class SpotifyForm(FlaskForm):
 
 
 #Spotify Information
-spotify_client_id = "21f3aaf01dc24ca09b45d6208b75c158"
-spotify_client_secret = "722d50d399b54b4993a7cfe3245f71a1"
+spotify_client_id = ""
+spotify_client_secret = ""
 spotify_redirect_uri = "http://localhost"
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
@@ -39,8 +39,8 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
                                                redirect_uri=spotify_redirect_uri,
                                                scope="user-modify-playback-state"))
 #Device ID's - I will use my Mac Computer device because it can easily alwasy be on vs. a phone.
-device_id_iphone = "203e9cafe73d84fc8c5f14ea3ab601b0303ae1df"
-device_id_mac = "6ecfe037163c6c49ca4b49f5c4c4dec17fdb9e97"
+device_id_iphone = ""
+device_id_mac = ""
 
 # Function which is passed in a song url and adds it to the url
 def add_to_queue(url):
